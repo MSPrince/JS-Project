@@ -71,24 +71,30 @@
             border: 2px solid #3498db;
         }
 
-
         .use_formula {
-            margin-top: 5px;
+            margin-top: 10px;
             text-align: center;
             font-size: 18px;
             color: #333;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .use_formula sup {
             font-size: 12px;
         }
-        h5{
+
+        h5 {
             margin-bottom: -50px;
-            background-color: red;
+            background-color: #e74c3c;
             display: inline;
             font-size: 15px;
-            padding: 3px;
+            padding: 8px;
             color: white;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -107,54 +113,32 @@
             </div>
         </div>
 
-        <div>
-            <h5> formula </h5>
         <div class="use_formula">
+            <h5>Formula:</h5>
             (0<sup>&deg;</sup>C * 9/5) + 32 = 32<sup>&deg;</sup>F
-        </div>
         </div>
     </div>
     <script>
-       let Celsius = document.getElementById("cel");
-       let Fahrenheit = document.getElementById("fah");
-       
+        let Celsius = document.getElementById("cel");
+        let Fahrenheit = document.getElementById("fah");
 
-       Celsius.addEventListener('input', function(){
-        let c = this.value;
-        let f = (c * 9 / 5) + 32;
-              if(!Number.isInteger(f)){ // remember
-                 f = f.toFixed(4);        // remember
-              }
-        Fahrenheit.value = f;
-       });
+        Celsius.addEventListener('input', function () {
+            let c = this.value;
+            let f = (c * 9 / 5) + 32;
+            if (!Number.isInteger(f)) {
+                f = f.toFixed(4);
+            }
+            Fahrenheit.value = f;
+        });
 
-       Fahrenheit.addEventListener('input', function(){
-           let f = this.value;
-           let c = (f - 32)* (5/9);
-             if (!Number.isInteger(f)) {
-               c = c.toFixed(4);
-           }
-           Celsius.value = c; 
-       });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function convertTemperature() {
-            // Add your temperature conversion logic here
-        }
+        Fahrenheit.addEventListener('input', function () {
+            let f = this.value;
+            let c = (f - 32) * (5 / 9);
+            if (!Number.isInteger(f)) {
+                c = c.toFixed(4);
+            }
+            Celsius.value = c;
+        });
     </script>
 </body>
 
