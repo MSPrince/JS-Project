@@ -42,10 +42,11 @@
         form {
             display: flex;
             flex-direction: column;
+            /* align-items: center; */
         }
 
         input {
-            margin-bottom: 15px;
+          
             padding: 10px;
             border: 1px solid #ced4da;
             border-radius: 4px;
@@ -72,34 +73,33 @@
             margin-top: 5px;
             font-size: 14px;
         }
-        
+
         /* Add this to your existing style block */
-input[type="checkbox"] {
-    margin-bottom: 15px;
-    /* Adjust the styles as needed */
-}
+        input[type="checkbox"] {
+            margin-bottom: 15px;
+            /* Adjust the styles as needed */
+        }
 
-.check{
-    display: flex;
-    justify-content: center;
-    align-items:first baseline;
-}
-input[type="checkbox"] + label {
-    margin-left: 5px;
-    font-size: 14px;
-    color: #007bff;
-}
+        .check {
+            display: flex;
+            justify-content: center;
+            align-items: first baseline;
+        }
 
-input[type="checkbox"]:checked + label::before {
-    content: '\2713'; /* Unicode checkmark character */
-    display: inline-block;
-    font-size: 16px;
-    color: #007bff;
-    margin-right: 5px;
-}
+        input[type="checkbox"]+label {
+            margin-left: 5px;
+            font-size: 14px;
+            color: #007bff;
+        }
 
-
-        
+        input[type="checkbox"]:checked+label::before {
+            content: '\2713';
+            /* Unicode checkmark character */
+            display: inline-block;
+            font-size: 16px;
+            color: #007bff;
+            margin-right: 5px;
+        }
     </style>
 </head>
 
@@ -118,11 +118,11 @@ input[type="checkbox"]:checked + label::before {
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password">
             <p class="error-message" id="confirmPassError"></p>
-           
+
             <div class="check">
-            <input type="checkbox" name="termsCheckbox" id="termsCheckbox">
-            <label for="termsCheckbox">I Understand</label>
-</div>
+                <input type="checkbox" name="termsCheckbox" id="termsCheckbox">
+                <label for="termsCheckbox">I Understand</label>
+            </div>
             <input type="submit" value="Submit">
         </form>
     </div>
